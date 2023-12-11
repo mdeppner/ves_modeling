@@ -6,36 +6,39 @@ import math
 def ves_forward(params, vectorABHalf):
     """VESForward: 1D DC resistivity forward modeling"""
     parameter_length = len(params)
+    resistivity_depth_cut_off = int((parameter_length + 1) / 2)
+
     if parameter_length % 2 == 1:
-        r = params[0: int((parameter_length + 1) / 2)]          # resistivities
-        t = params[int((parameter_length + 1) / 2):]            # depths
-        s = vectorABHalf                                        # half electrode spacing
+        # split parameters into resistivities and depths
+        resistivies = params[:resistivity_depth_cut_off]       # resistivities
+        depths = params[resistivity_depth_cut_off:]            # depths ( in paper called thickness:  t_i)
+        electrode_spacing = vectorABHalf                       # half electrode spacing
 
         # AB-Half electrode postion
-        ls = len(s)
-        u = np.zeros((ls, 1))
-        rho_semu = np.zeros((ls, 1))
+        num_measurements = len(electrode_spacing)
+        u = np.zeros((num_measurements, 1))
+        rho_semu = np.zeros((num_measurements, 1))
 
-        for j in range(ls):
+        for j in range(num_measurements):
             q = 13
             f = 10
             m = 4.438
             x = 0
-            e = math.exp(math.log(10) / (2 * m))  # 1.2961741677274485
+            e = math.exp(math.log(10) / (2 * m))        # 1.2961741677274485
             h = 2 * q - 2
-            u[j] = s[j] * math.exp(-f * math.log(10) / (m - x))
-            l = len(r) - 1
+            u[j] = electrode_spacing[j] * math.exp(-f * math.log(10) / (m - x))
+            l = len(resistivies) - 1
             n = 1
 
             li = n + h
             a = np.zeros(li)
             for i in range(li):
                 w = l
-                T = r[l]
+                T = resistivies[l]
                 while w > 0:
                     w = w - 1
-                    aa = math.tanh(t[w] / u[j])
-                    T = (T + r[w] * aa) / (1 + T * aa / r[w])
+                    aa = math.tanh(depths[w] / u[j])
+                    T = (T + resistivies[w] * aa) / (1 + T * aa / resistivies[w])
                 a[i] = T
                 u[j] = u[j] * e
 
