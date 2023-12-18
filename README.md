@@ -27,6 +27,18 @@ Mo. 18.12
 - Check the results for increasing the number of measurements taken (from 19 to 100)
 - Check the results for increasing the number of simulations taken into the posterior
 
+### Meeting with Guy 18.12
+100 datapoints actually quite a lot - might be useful to use an embedding network for so many datapoints, as for each layer an own function for each input is trained and might take a lot of time for 100 inputs
+for smooth example of synthetic generated data - 19 should actually be enough
+Embedded network
+Try on different SBI models or functionalities (like embedded nets) explore and try out
+Parallelize code to be faster
+
+
+Infer the depths as well
+Fix the depth of layers and check this out 
+E.g. every layer is of a fixed size of 1m or 2m
+
 
 
 # ToDos
