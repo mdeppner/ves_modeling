@@ -65,11 +65,33 @@ Mi. 10.01.2024
 
 Mo. 15.01.2024
 
-#### Todos: 
+#### Ideas for improvement: 
 - Try normalization on the parameters space 
 - Try to run more simulations
-- Ty to limit in terms of standard deviation ...
+- Ty to limit in terms of standard deviation 
 - Look for way to improve the SBI inversion
 - Try less spacing instead of 1 - 1000 only 1 - 100
 - Try less layers - only two for now
 - Try multi-round inference
+
+## Meeting with Guy: 
+- SBI should be able to solve this problem
+- Try limiting the prior
+- From the 100 samples and the 10000 simulations save them and sample from them
+- add noise to avoid the effect of a delta function
+- add more simulations 1000 might be too little
+- multi-round SBI might be an option
+
+## Done: 
+- Adding noise
+- Limiting the prior space
+- Restructuring the notebooks and the functions to run efficient experiments
+
+
+### Urgently need to do: 
+- Rerun the example with 100 measurements and 10000 simulations 
+- Also 20 measurements and 10000 simulations? might be obsolete as we can subsample this form the 100 measurement example
+- Think about alternative/better ways to visualize the results. 
+
+
+
