@@ -18,6 +18,14 @@ Di. 12.12
 - Präsentation für Seminar
 - VES example for Reinhard
 
+#### From discussion with Guy after showing the plots
+
+From the posterior check the sounding curves and see how they look like, might be that they all match the original sounding curves
+100 parameters is not that much.
+increase the number of measurements, currently only 19 measurements were taken - increase up to 50 or even 100
+set the thicknesses fixed - assume you already know them and then only infer the resistivities
+
+
 
 # KW 51
 Mo. 18.12
@@ -42,7 +50,14 @@ E.g. every layer is of a fixed size of 1m or 2m
 
 
 # ToDos
-- check results when increasing the number of measurements from 19 to 100
-- check the results when training for 10000 iterations (sample generations before creating the posterior, or on which the posterior is built on)
+- done: check results when increasing the number of measurements from 19 to 100
+- done: check the results when training for 10000 iterations (sample generations before creating the posterior, or on which the posterior is built on)
 - improve the forward modeling s.t. one can give or provide the number of measurements and let them be generated on a linear scale or that one can give the (source_list) - the positions of the electrodes AB and MN
+
+
+# KW 2 - 2024
+
+Mi. 10.01.2024
+- Check the model on a linear scale instead of log scale
+- Check SBI inversion for 40 measurements - 20 in the range from 1 to 100 and 20 from 100 to 1000
 - 
