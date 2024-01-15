@@ -60,4 +60,16 @@ E.g. every layer is of a fixed size of 1m or 2m
 Mi. 10.01.2024
 - Check the model on a linear scale instead of log scale
 - Check SBI inversion for 40 measurements - 20 in the range from 1 to 100 and 20 from 100 to 1000
-- 
+
+# KW 3
+
+Mo. 15.01.2024
+
+#### Todos: 
+- Try normalization on the parameters space 
+- Try to run more simulations
+- Ty to limit in terms of standard deviation ...
+- Look for way to improve the SBI inversion
+- Try less spacing instead of 1 - 1000 only 1 - 100
+- Try less layers - only two for now
+- Try multi-round inference
