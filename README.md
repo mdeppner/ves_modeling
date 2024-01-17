@@ -94,4 +94,16 @@ Mo. 15.01.2024
 - Think about alternative/better ways to visualize the results. 
 
 
+Di. 16.01.2024 
+### Done:
+- Run on 20 measurements with more trainings iterations (Section 5)
+- Limiting the measurement distance (Section 6)
+- Rerun the 100 measurements and 10000 simulations
 
+Mi. 17.01.2024
+### Done
+- Check the behaviour of shorter measurements
+- Check out the needed simulations for a higher prior
+- Introduction to cluster computation 
+- GitLab action
+- 
